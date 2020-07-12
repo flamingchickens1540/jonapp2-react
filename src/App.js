@@ -1,14 +1,10 @@
 import React from 'react';
 import './App.css';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-} from "react-router-dom";
+import {BrowserRouter as Router, Route, Switch,} from "react-router-dom";
 import Splash from "./Splash"
 import Appbar from "./Appbar";
 import Entrance from "./Entrance";
-
+import ProjectPage from "./ProjectPage";
 
 function App() {
     return (
@@ -40,6 +36,9 @@ function App() {
                             buttonText="Create Account"
                             mainText="Sign Up"
                         />
+                    </Route>
+                    <Route path="/projects">
+                        <ProjectPage />
                     </Route>
                 </Switch>
             </div>

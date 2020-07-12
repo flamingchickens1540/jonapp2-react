@@ -1,8 +1,8 @@
 import React from 'react';
-import {Formik, Field, Form, useField} from 'formik';
+import {Field, Form, Formik} from 'formik';
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
-import { makeStyles } from "@material-ui/core/styles";
+import {makeStyles} from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 
 const useStyles = makeStyles((theme) => ({
@@ -12,7 +12,11 @@ const useStyles = makeStyles((theme) => ({
     submitButton: {
         color: 'white',
         backgroundColor: '#48577d',
+        "&:hover": {
+            backgroundColor: '#6476A6',
+        }
     },
+
 }));
 
 export default function LogForm(props) {

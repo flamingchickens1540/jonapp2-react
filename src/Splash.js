@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
-import { Link, Redirect }  from "react-router-dom";
-import { makeStyles } from "@material-ui/core/styles";
+import {Link} from "react-router-dom";
+import {makeStyles} from "@material-ui/core/styles";
 import VpnKeyIcon from "@material-ui/icons/VpnKey";
 import AssignmentIcon from "@material-ui/icons/Assignment";
 import Typography from "@material-ui/core/Typography";
@@ -12,7 +12,6 @@ import Box from "@material-ui/core/Box";
 // import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 import Fade from "@material-ui/core/Fade";
-
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -36,6 +35,9 @@ const useStyles = makeStyles((theme) => ({
     splashButton: {
         color: 'white',
         backgroundColor: '#48577d',
+        "&:hover": {
+            backgroundColor: '#6476A6',
+        }
     },
     aboutCard: {
         color: 'white',

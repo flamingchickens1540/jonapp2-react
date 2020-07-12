@@ -1,13 +1,12 @@
-import React from "react"
+import React, {useEffect, useState} from "react"
 import LogForm from "./LogForm";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import Container from "@material-ui/core/Container";
-import { makeStyles } from "@material-ui/core/styles";
+import {makeStyles} from "@material-ui/core/styles";
 import Appbar from "./Appbar";
 import Typography from "@material-ui/core/Typography";
 import Fade from "@material-ui/core/Fade";
-import { useState, useEffect } from "react"
 
 
 const useStyles = makeStyles((theme) => ({
@@ -34,7 +33,6 @@ const useStyles = makeStyles((theme) => ({
 export default function Entrance(props) {
     const classes = useStyles();
     const [ fadeBool, setFadeBool ] = useState(false);
-
 
     useEffect(() => {
        setFadeBool(true)
