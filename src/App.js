@@ -1,26 +1,50 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+} from "react-router-dom";
+import Splash from "./Splash"
+import Appbar from "./Appbar";
+import Entrance from "./Entrance";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <Router>
+            <div>
+                <Switch>
+                    <Route exact path="/">
+                        <Appbar/>
+                        <Splash/>
+                    </Route>
+                    <Route path="/login">
+                        <Entrance
+                            formChoices={[
+                                {name: 'email', label: 'Email', type: 'email'},
+                                {name: 'password', label: 'Password', type: 'password'},
+                            ]}
+                            buttonText="Sign In"
+                            mainText="Sign In"
+                        />
+                    </Route>
+                    <Route path="/signup">
+                        <Entrance
+                            formChoices={[
+                                {name: 'fullName', label: 'Full Name', type: 'text'},
+                                {name: 'email', label: 'Email', type: 'email'},
+                                {name: 'password', label: 'Password', type: 'password'},
+                                {name: 'confirmpassword', label: 'Confirm Password', type: 'password'}
+                            ]}
+                            buttonText="Create Account"
+                            mainText="Sign Up"
+                        />
+                    </Route>
+                </Switch>
+            </div>
+        </Router>
+    );
 }
 
 export default App;
