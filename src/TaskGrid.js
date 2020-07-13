@@ -1,10 +1,10 @@
-import React, {useEffect, useState} from "react";
-import {Box, Container, Fab, Grid, Paper, Typography,} from "@material-ui/core";
+import React, {useEffect, useState} from "react"
 import {makeStyles} from "@material-ui/core/styles";
-import AddIcon from "@material-ui/icons/Add"
 import Appbar from "./Appbar";
-import ProjectCard from "./ProjectCard";
 import Fade from "@material-ui/core/Fade";
+import {Box, Container, Fab, Grid, Paper, Typography} from "@material-ui/core";
+import AddIcon from "@material-ui/icons/Add";
+import TaskCard from "./TaskCard";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -36,24 +36,24 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-export default function ProjectGrid(props) {
+export default function TaskGrid(props) {
     const classes = useStyles();
-
-    const projectGrid = props.projects.map(project => {
-        return (
-            <ProjectCard
-                project={project}
-                key={project.id}
-                handleChange={props.handleChange}
-            />
-        )
-    });
 
     const [ fadeBool, setFadeBool ] = useState(false);
 
     useEffect(() => {
         setFadeBool(true)
     }, [fadeBool]);
+
+    const taskGrid = props.project.tasks.map(task => {
+        return (
+            <TaskCard
+                task={task}
+                key={task.id}
+                handleChange={props.handleChange}
+            />
+        )
+    });
 
     return (
         <div className={classes.root}>
@@ -64,7 +64,7 @@ export default function ProjectGrid(props) {
                         <Grid item xs={12}>
                             <Paper className={classes.projectContainer}>
                                 <Grid container>
-                                    <Grid item xs={12} style={{padding: ' 0px 20px'}}>
+                                    <Grid item xs={12} style={{padding: '0px 20px'}}>
                                         <Box display="flex" justifyContent="center" alignItems="center">
                                             <Box display="flex" justifyContent="flex-start" flexGrow="1">
                                                 <Fab aria-label="add" className={classes.addButton}>
@@ -73,7 +73,7 @@ export default function ProjectGrid(props) {
                                             </Box>
                                             <Box flexGrow="2" textAlign="center">
                                                 <Typography variant="h2" className={classes.title}>
-                                                    Projects
+                                                    Tasks
                                                 </Typography>
                                             </Box>
                                             <Box flexGrow="1">
@@ -83,7 +83,7 @@ export default function ProjectGrid(props) {
                                             </Box>
                                         </Box>
                                     </Grid>
-                                    {projectGrid}
+                                    {taskGrid}
                                 </Grid>
                             </Paper>
                         </Grid>
@@ -92,4 +92,5 @@ export default function ProjectGrid(props) {
             </Fade>
         </div>
     )
+
 }

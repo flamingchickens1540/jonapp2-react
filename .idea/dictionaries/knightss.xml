@@ -2,6 +2,9 @@
   <dictionary name="knightss">
     <words>
       <w>confirmpassword</w>
+      <w>disp</w>
+      <w>subtask</w>
+      <w>subtasks</w>
     </words>
   </dictionary>
 </component>

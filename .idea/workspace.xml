@@ -2,14 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70c83eb3-6f67-4edb-9715-fd56584b8157" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ProjectCard.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ProjectGrid.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ProjectPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SubTaskCard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/TaskCard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/TaskGrid.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/simpleMenu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/knightss.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/knightss.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entrance.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entrance.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LogForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Splash.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Splash.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ProjectCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProjectCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ProjectGrid.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProjectGrid.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ProjectPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProjectPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +27,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="ProjectId" id="1eX23xzhblwob7lIy3CMnRvJ1da" />
   <component name="ProjectViewState">
@@ -69,7 +72,8 @@
       <option name="presentableId" value="Default" />
       <updated>1594453421959</updated>
       <workItem from="1594453425858" duration="9699000" />
-      <workItem from="1594502193990" duration="37852000" />
+      <workItem from="1594502193990" duration="40608000" />
+      <workItem from="1594592159398" duration="29050000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <created>1594527599133</created>
@@ -78,7 +82,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594527599133</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Project Page!">
+      <created>1594542973493</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1594542973493</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -86,21 +97,28 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit." />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit." />
+    <MESSAGE value="Project Page!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Project Page!" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1623" y="450" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1594526181540">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1623" y="450" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400/313.-1080.1920.1040@0.0.2560.1400" timestamp="1594526181540" />
-    <state x="1516" y="211" key="CommitChangelistDialog2" timestamp="1594527597922">
+    <state x="1516" y="211" key="CommitChangelistDialog2" timestamp="1594542972750">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1516" y="211" key="CommitChangelistDialog2/0.0.2560.1400/313.-1080.1920.1040@0.0.2560.1400" timestamp="1594527597922" />
-    <state x="1485" y="432" key="Vcs.Push.Dialog.v2" timestamp="1594527609926">
+    <state x="1516" y="211" key="CommitChangelistDialog2/0.0.2560.1400/313.-1080.1920.1040@0.0.2560.1400" timestamp="1594542972750" />
+    <state x="1485" y="432" key="Vcs.Push.Dialog.v2" timestamp="1594542978822">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1485" y="432" key="Vcs.Push.Dialog.v2/0.0.2560.1400/313.-1080.1920.1040@0.0.2560.1400" timestamp="1594527609926" />
+    <state x="1485" y="432" key="Vcs.Push.Dialog.v2/0.0.2560.1400/313.-1080.1920.1040@0.0.2560.1400" timestamp="1594542978822" />
+    <state x="1087" y="612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1594592168786">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1087" y="612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400/313.-1080.1920.1040@0.0.2560.1400" timestamp="1594592168786" />
     <state width="600" height="440" key="javadoc.popup" timestamp="1594462421182">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
