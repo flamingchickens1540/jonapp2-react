@@ -22,7 +22,7 @@ export default function ProjectPage() {
     };
 
     useEffect(() => {
-        setProjects() //Set this to something!)
+        setProjects() //Set this to something!
     }, []);
 
 
@@ -30,7 +30,7 @@ export default function ProjectPage() {
         <Switch>
             <Route path={`${match.path}/:projectId`}>
                 <TaskGrid
-                    project={{id: 10, name: 'Project Test', description: 'Here is a test description', image: '', tasks: [{id: 1, name: 'Do the dirty dishes', description: 'Please pickup your dishes and put them in the dishwasher.', image: '', subtasks: [{id: 2, name: 'Sub-task', description: 'Sub-task description.'}, {id: 3, name: 'Sub-task', description: 'Sub-task description.'}] }] }}
+                    project={{id: 10, name: 'Project Test', description: 'Here is a test description', image: '', tasks: [{id: 1, name: 'Do the dirty dishes', description: 'Please pickup your dishes and put them in the dishwasher.', image: '', subtasks: [{id: 2, name: 'Sub-task', description: 'Sub-task description.', image: ''}, {id: 3, name: 'Sub-task', description: 'Sub-task description.'}] }] }}
                     handleChange={handleChange}
                 />
             </Route>

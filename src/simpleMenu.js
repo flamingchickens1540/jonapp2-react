@@ -31,7 +31,7 @@ export default function SimpleMenu(props) {
                 onClose={handleClose}
             >
                 <MenuItem onClick={(event) => {
-                    props.handleChange(props.id, props.type, 'edit');
+                    props.handleEdit();
                     handleClose()
                 }}>
                     <Box display="flex" alignItems="center">
@@ -40,7 +40,7 @@ export default function SimpleMenu(props) {
                     </Box>
                 </MenuItem>
                 <MenuItem onClick={(event) => {
-                    props.handleChange(props.id, props.type, 'delete');
+                    props.handleDelete(props.id, props.type, 'delete');
                     handleClose()
                 }}>
                     <Box display="flex" alignItems="center">

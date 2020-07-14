@@ -91,7 +91,7 @@ export default function TaskCard(props) {
     const classes = useStyles();
 
     const [ dispBool, setDispBool ] = useState(false);
-    const [ editBool, setEditBool ] = useState(false);
+    const [ editBool, setEditBool ] = useState(props.form);
     const [ formImageVal, setFormImageVal ] = useState(null);
 
     const handleClick = () => {
@@ -117,15 +117,23 @@ export default function TaskCard(props) {
         })
     };
 
-    const subTaskGrid = props.task.subtasks.map(subtask => {
-        return (
-            <SubTaskCard
-                subtask={subtask}
-                handleChange={props.handleChange}
-                key={subtask.id}
-            />
-        )
-    });
+    const handleDelete = () => {
+
+    };
+
+    let subTaskGrid;
+
+    if (props.form === false) {
+        subTaskGrid = props.task.subtasks.map(subtask => {
+            return (
+                <SubTaskCard
+                    subtask={subtask}
+                    handleChange={props.handleChange}
+                    key={subtask.id}
+                />
+            )
+        });
+    }
 
     const handleImageUpdate = (event) => {
         if (event.currentTarget.files && event.currentTarget.files[0]) {
@@ -148,7 +156,7 @@ export default function TaskCard(props) {
             <Card className={classes.taskCard}>
                 <Box className={classes.details}>
                         {editBool ?
-                            <ClickAwayListener onClickAway={handleEdit}>
+                            <ClickAwayListener onClickAway={props.form ? null : handleEdit}>
                                 <Box className={classes.actionArea}>
                                     <Formik
                                         initialValues={{ name: props.task.name, description: props.task.description, image: ''}}
@@ -192,12 +200,14 @@ export default function TaskCard(props) {
                                                             type="text"
                                                             name="name"
                                                             label="Task Name"
-                                                            className={classes.taskInputTitle + ' MuiTypography-gutterBottom MuiTypography-h5'}
+                                                            placeholder="Task Name"
+                                                            className={classes.taskInputTitle + ' MuiTypography-h5'}
                                                         />
                                                         <Field
                                                             type="text"
                                                             name="description"
                                                             label="Task Description"
+                                                            placeholder="Task Description"
                                                             className={classes.taskInputDesc + ' MuiTypography-colorTextSecondary MuiTypography-body2'}
                                                         />
                                                     </CardContent>
@@ -207,9 +217,7 @@ export default function TaskCard(props) {
                                                         className={classes.formButtons}
                                                     >
                                                         <Button type="submit">Save</Button>
-                                                        <Button onClick={() => {
-                                                            handleEdit();
-                                                        }}>Cancel</Button>
+                                                        <Button onClick={props.form ? props.handleAddTask : handleEdit}>Cancel</Button>
                                                     </ButtonGroup>
                                                 </Box>
                                             </Form>
@@ -223,12 +231,12 @@ export default function TaskCard(props) {
                                     <CardMedia
                                         className={classes.taskImage}
                                         component="img"
-                                        image="https://cdn.discordapp.com/attachments/473705436793798676/696918972771074068/Untitled_drawing_3.png"
+                                        image={props.task.image === '' || null ? 'https://cdn.discordapp.com/attachments/473705436793798676/696918972771074068/Untitled_drawing_3.png' : props.task.image}
                                         alt="Task Image"
                                         height="120"
                                     />
                                     <CardContent className={classes.content}>
-                                        <Typography gutterBottom variant="h5" component="h2" style={{paddingBottom: '2px'}}>
+                                        <Typography variant="h5" component="h2" style={{paddingBottom: '2px'}}>
                                             {props.task.name}
                                         </Typography>
                                         <Typography variant="body2" color="textSecondary" component="p" style={{paddingBottom: '2px'}}>
@@ -238,12 +246,13 @@ export default function TaskCard(props) {
                                 </Box>
                             </CardActionArea>}
                         <div style={{alignSelf: 'center', paddingRight: '5px'}}>
-                            <SimpleMenu handleChange={handleEdit} id={props.task.id} type="task" />
+                            {props.form || editBool ? null:
+                            <SimpleMenu handleEdit={handleEdit} handleDelete={handleDelete} id={props.task.id} type="task" />}
                         </div>
                 </Box>
             </Card>
             <Box className={classes.subTaskFlex} style={{display: dispBool ? 'flex' : 'none'}}>
-                {subTaskGrid}
+                {props.form ? null : subTaskGrid}
             </Box>
         </Grid>
     )

@@ -39,6 +39,21 @@ const useStyles = makeStyles((theme) => ({
 export default function ProjectGrid(props) {
     const classes = useStyles();
 
+    const [ fadeBool, setFadeBool ] = useState(false);
+    const [ isAddingProject, setIsAddingProject ] = useState(false);
+
+    useEffect(() => {
+        setFadeBool(true)
+    }, [fadeBool]);
+
+    const handleAddProject = () => {
+        setIsAddingProject(prevState => {
+            return (
+                !prevState
+            )
+        })
+    };
+
     const projectGrid = props.projects.map(project => {
         return (
             <ProjectCard
@@ -49,11 +64,13 @@ export default function ProjectGrid(props) {
         )
     });
 
-    const [ fadeBool, setFadeBool ] = useState(false);
-
-    useEffect(() => {
-        setFadeBool(true)
-    }, [fadeBool]);
+    const addProjectForm = (
+        <ProjectCard
+            project={{id: 0, name: '', description: '', image: ''}}
+            form={true}
+            handleAddTask={handleAddProject}
+        />
+    );
 
     return (
         <div className={classes.root}>
@@ -67,7 +84,7 @@ export default function ProjectGrid(props) {
                                     <Grid item xs={12} style={{padding: ' 0px 20px'}}>
                                         <Box display="flex" justifyContent="center" alignItems="center">
                                             <Box display="flex" justifyContent="flex-start" flexGrow="1">
-                                                <Fab aria-label="add" className={classes.addButton}>
+                                                <Fab aria-label="add" className={classes.addButton} onClick={isAddingProject ? null : handleAddProject}>
                                                     <AddIcon/>
                                                 </Fab>
                                             </Box>
@@ -83,6 +100,7 @@ export default function ProjectGrid(props) {
                                             </Box>
                                         </Box>
                                     </Grid>
+                                    {isAddingProject ? addProjectForm : null}
                                     {projectGrid}
                                 </Grid>
                             </Paper>

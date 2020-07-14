@@ -40,6 +40,7 @@ export default function TaskGrid(props) {
     const classes = useStyles();
 
     const [ fadeBool, setFadeBool ] = useState(false);
+    const [ isAddingTask, setIsAddingTask ] = useState(false);
 
     useEffect(() => {
         setFadeBool(true)
@@ -51,9 +52,26 @@ export default function TaskGrid(props) {
                 task={task}
                 key={task.id}
                 handleChange={props.handleChange}
+                form={false}
             />
         )
     });
+
+    const handleAddTask = () => {
+        setIsAddingTask(prevState => {
+            return (
+                !prevState
+            )
+        })
+    };
+
+    const addTaskForm = (
+            <TaskCard
+                task={{id: 0, name: '', description: '', image: ''}}
+                form={true}
+                handleAddTask={handleAddTask}
+            />
+    )
 
     return (
         <div className={classes.root}>
@@ -67,7 +85,7 @@ export default function TaskGrid(props) {
                                     <Grid item xs={12} style={{padding: '0px 20px'}}>
                                         <Box display="flex" justifyContent="center" alignItems="center">
                                             <Box display="flex" justifyContent="flex-start" flexGrow="1">
-                                                <Fab aria-label="add" className={classes.addButton}>
+                                                <Fab aria-label="add" className={classes.addButton} onClick={isAddingTask ? null : handleAddTask}>
                                                     <AddIcon/>
                                                 </Fab>
                                             </Box>
@@ -83,6 +101,7 @@ export default function TaskGrid(props) {
                                             </Box>
                                         </Box>
                                     </Grid>
+                                    {isAddingTask ? addTaskForm : null}
                                     {taskGrid}
                                 </Grid>
                             </Paper>
