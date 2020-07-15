@@ -2,7 +2,6 @@ import React, {useEffect, useState} from "react";
 import {Box, Container, Fab, Grid, Paper, Typography,} from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
 import AddIcon from "@material-ui/icons/Add"
-import Appbar from "./Appbar";
 import ProjectCard from "./ProjectCard";
 import Fade from "@material-ui/core/Fade";
 
@@ -74,7 +73,6 @@ export default function ProjectGrid(props) {
 
     return (
         <div className={classes.root}>
-            <Appbar/>
             <Fade in={fadeBool} timout={1000}>
                 <Container className={classes.offsetContainer}>
                     <Grid container>

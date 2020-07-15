@@ -3,14 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="70c83eb3-6f67-4edb-9715-fd56584b8157" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Appbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Appbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ProjectCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProjectCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entrance.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entrance.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LogForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ProjectGrid.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProjectGrid.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ProjectPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProjectPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SubTaskCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/SubTaskCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskCard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TaskGrid.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskGrid.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/simpleMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/simpleMenu.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +73,8 @@
       <workItem from="1594502193990" duration="40608000" />
       <workItem from="1594592159398" duration="29110000" />
       <workItem from="1594671972898" duration="13525000" />
+      <workItem from="1594710087318" duration="140000" />
+      <workItem from="1594761232303" duration="19651000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <created>1594527599133</created>
@@ -96,7 +97,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594634682945</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added more editing for projects, can now add new tasks and projects.">
+      <created>1594710187326</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1594710187326</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -106,7 +114,8 @@
     <MESSAGE value="Initial commit." />
     <MESSAGE value="Project Page!" />
     <MESSAGE value="Tasks, subtasks, and some task editing implemented." />
-    <option name="LAST_COMMIT_MESSAGE" value="Tasks, subtasks, and some task editing implemented." />
+    <MESSAGE value="Added more editing for projects, can now add new tasks and projects." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added more editing for projects, can now add new tasks and projects." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -115,18 +124,18 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1623" y="450" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400/313.-1080.1920.1040@0.0.2560.1400" timestamp="1594526181540" />
-    <state x="1516" y="211" key="CommitChangelistDialog2" timestamp="1594634682071">
+    <state x="1516" y="211" key="CommitChangelistDialog2" timestamp="1594710185846">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1516" y="211" key="CommitChangelistDialog2/0.0.2560.1400/313.-1080.1920.1040@0.0.2560.1400" timestamp="1594634682071" />
-    <state x="1485" y="432" key="Vcs.Push.Dialog.v2" timestamp="1594634686279">
+    <state x="1516" y="211" key="CommitChangelistDialog2/0.0.2560.1400/313.-1080.1920.1040@0.0.2560.1400" timestamp="1594710185846" />
+    <state x="1485" y="432" key="Vcs.Push.Dialog.v2" timestamp="1594710206072">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1485" y="432" key="Vcs.Push.Dialog.v2/0.0.2560.1400/313.-1080.1920.1040@0.0.2560.1400" timestamp="1594634686279" />
-    <state x="1087" y="612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1594592168786">
+    <state x="1485" y="432" key="Vcs.Push.Dialog.v2/0.0.2560.1400/313.-1080.1920.1040@0.0.2560.1400" timestamp="1594710206072" />
+    <state x="1407" y="563" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1594783086961">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1087" y="612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400/313.-1080.1920.1040@0.0.2560.1400" timestamp="1594592168786" />
+    <state x="1407" y="563" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400/313.-1080.1920.1040@0.0.2560.1400" timestamp="1594783086961" />
     <state width="600" height="440" key="javadoc.popup" timestamp="1594462421182">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

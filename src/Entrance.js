@@ -41,7 +41,7 @@ export default function Entrance(props) {
 
     return (
         <div className={classes.root}>
-            <Appbar />
+            <Appbar back={true} />
             <Fade in={fadeBool} timeout={1000}>
                 <Grid container justify="center" alignContent="center" className={classes.offsetContainer}>
                     <Grid item xs={12} md={6} lg={3}>
@@ -50,7 +50,7 @@ export default function Entrance(props) {
                                 <Typography variant="h2" className={classes.formTitle}>
                                     {props.mainText}
                                 </Typography>
-                                <LogForm formChoices={props.formChoices} buttonText={props.buttonText}/>
+                                <LogForm formType={props.formType} formChoices={props.formChoices} buttonText={props.buttonText} submitHandler={props.submitHandler}/>
                             </Paper>
                         </Container>
                     </Grid>

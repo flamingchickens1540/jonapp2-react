@@ -38,9 +38,12 @@ export default function Appbar(props) {
                 <Typography component={ Link } to="/" variant="h4" color="inherit" className={classes.logo}>
                     JonApp
                 </Typography>
-                <IconButton aria-label="back to previous page" color="inherit" className={classes.backButton}>
+                {props.back ?
+                <IconButton aria-label="back to previous page" color="inherit" className={classes.backButton} onClick={() => {
+                    window.history.back()
+                }}>
                     <ArrowBackIcon />
-                </IconButton>
+                </IconButton> : null}
             </Toolbar>
         </AppBar>
     )

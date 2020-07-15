@@ -22,55 +22,58 @@ const useStyles = makeStyles((theme) => ({
 export default function LogForm(props) {
     const classes = useStyles();
 
-    console.log(props.formChoices[1])
 
-        let initVals = {};
-        for (let i = 0; i < props.formChoices.length; i++) {
-            initVals[props.formChoices[i]['name']] = ''
-        }
-        console.log(initVals, 'INITIAL');
 
-        const formItems = props.formChoices.map(item => {
-            // let req;
-            // item.required ? req = 'required' : null; TODO: need to figure out how to implement required
-            return (
-                <Grid item xs={12}>
-                    <Field
-                        as={ TextField }
-                        required
-                        name={item.name}
-                        type={item.type}
-                        label={item.label}
-                        variant="outlined"
-                        fullWidth
-                    />
-                </Grid>
-            )
-    })
+    let initVals = {};
+    for (let i = 0; i < props.formChoices.length; i++) {
+        initVals[props.formChoices[i]['name']] = ''
+    }
 
+
+    let formItems;
     return (
         <Formik
-            initialValues={{ email: '', password: ''}}
+            initialValues={initVals}
             validate={values => {
+                const errors = {};
 
+                if (props.formType === 'signup') {
+                    if (values.confirmpassword !== values.password) {
+                        errors.confirmpassword = 'Passwords must match'
+                    }
+                }
+                return errors
             }}
             onSubmit={(values, { setSubmitting }) => {
-
-                setTimeout(() => {
-
-                    console.log(values);
-
-                    setSubmitting(false);
-
-
-                }, 400);
-
+                props.submitHandler(values);
+                setSubmitting(false);
             }}
         >
-            {({ isSubmitting }) => (
+            {({ isSubmitting, touched, errors }) => (
                 <Form>
                     <Grid container spacing={2}>
-                        { formItems }
+                        { formItems = props.formChoices.map(item => {
+                            // let req;
+                            // item.required ? req = 'required' : null; TODO: need to figure out how to implement required
+
+                            return (
+                            <Grid item xs={12}>
+                                <Field
+                                    as={ TextField }
+                                    required
+                                    name={item.name}
+                                    type={item.type}
+                                    label={item.label}
+                                    variant="outlined"
+                                    fullWidth
+                                    error={
+                                        Boolean(errors[item.name] && touched[item.name])
+                                    }
+                                    helperText={errors[item.name] && touched[item.name] ? errors[item.name] : null}
+                                />
+                            </Grid>
+                            )
+                        }) }
                         <Grid item xs={12}>
                             <Button type="submit"
                                     variant="contained"

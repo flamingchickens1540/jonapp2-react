@@ -7,12 +7,32 @@ import Entrance from "./Entrance";
 import ProjectPage from "./ProjectPage";
 
 function App() {
+
+    function login(values) {
+        console.log(values);
+
+        const url = 'http://localhost:5001/login';
+        fetch(url, {method: 'POST', body: values})
+            .then(response => response.json())
+            .then(data => console.log(data));
+    }
+
+    function signup(values) {
+        console.log(values);
+
+        const url = '/api/signup';
+        fetch(url, {method: 'POST', body: values})
+            .then(response => response.json())
+            .then(data => console.log(data));
+    }
+
+
     return (
         <Router>
             <div>
                 <Switch>
                     <Route exact path="/">
-                        <Appbar/>
+                        <Appbar back={false}/>
                         <Splash/>
                     </Route>
                     <Route path="/login">
@@ -23,6 +43,8 @@ function App() {
                             ]}
                             buttonText="Sign In"
                             mainText="Sign In"
+                            formType="login"
+                            submitHandler={login}
                         />
                     </Route>
                     <Route path="/signup">
@@ -35,6 +57,8 @@ function App() {
                             ]}
                             buttonText="Create Account"
                             mainText="Sign Up"
+                            formType="signup"
+                            submitHandler={signup}
                         />
                     </Route>
                     <Route path="/projects">

@@ -75,7 +75,7 @@ export default function TaskGrid(props) {
 
     return (
         <div className={classes.root}>
-            <Appbar/>
+            <Appbar back={true} />
             <Fade in={fadeBool} timout={1000}>
                 <Container className={classes.offsetContainer}>
                     <Grid container>
