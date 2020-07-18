@@ -32,10 +32,12 @@ export default function ProjectPage() {
         fetch(url, {method: 'POST', body: AUTH_TOKEN})
             .then(response => response.json())
             .then((data) => {
-                setProjects([data.detail]);
                 console.log(data);
-                setIsLoading(false);
-            } )
+                setProjects(data.data);
+
+                setTimeout(() => setIsLoading(false), 100);
+            })
+            .catch(error => console.log(error))
 
     }, []);
 
@@ -69,15 +71,15 @@ export default function ProjectPage() {
     return(
         <Switch>
             <Route exact path={match.path}>
-                <Appbar back={false} />
-                { isLoading ? <CircularProgress style={{position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}}/> :
+                <Appbar back={false} profile={true} />
+                { isLoading ? <div style={{position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}}><CircularProgress /></div> :
                     <ProjectGrid
                         projects={projects} //replace this with the projects var when necessary
                         handleChange={handleChange}
                     />}
             </Route>
             <Route path={`${match.path}/:projectId`}>
-                {projects === null ? null : loadProject()}
+                {projects === null ? null : loadProject}
             </Route>
         </Switch>
     )

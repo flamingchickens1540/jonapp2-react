@@ -6,22 +6,29 @@ import Appbar from "./Appbar";
 import Entrance from "./Entrance";
 import ProjectPage from "./ProjectPage";
 
+//Central component. Handles login/signup api requests, but hands off project and user data to the ProjectPage.
 function App() {
 
+    //Function for taking login form values and sending request to receive auth token.
     function login(values) {
-        console.log(values);
+        console.log(JSON.stringify(values));
 
         const url = 'http://localhost:5001/login';
-        fetch(url, {method: 'POST', body: values})
+        fetch(url, {method: 'POST', body: JSON.stringify(values), headers: {
+                'Content-Type': 'application/json',
+            },})
             .then(response => response.json())
             .then(data => console.log(data));
     }
 
+    //Function for taking signup form values and sending request to receive auth token.
     function signup(values) {
         console.log(values);
 
-        const url = '/api/signup';
-        fetch(url, {method: 'POST', body: values})
+        const url = 'http://localhost:5001/signup';
+        fetch(url, {method: 'POST', body: JSON.stringify(values), headers: {
+                'Content-Type': 'application/json',
+            },})
             .then(response => response.json())
             .then(data => console.log(data));
     }
@@ -61,7 +68,7 @@ function App() {
                             submitHandler={signup}
                         />
                     </Route>
-                    <Route path="/projects">
+                    <Route path="/projects"> {/*The projects path is handled by the ProjectPage component, which also routes any url params.*/}
                         <ProjectPage />
                     </Route>
                 </Switch>
@@ -70,6 +77,6 @@ function App() {
     );
 }
 
-//https://github.com/TeamWertarbyte/material-ui-feature-discovery-prompt
+//https://github.com/TeamWertarbyte/material-ui-feature-discovery-prompt just to help me remember where to look when we implement feature discovery.
 
 export default App;

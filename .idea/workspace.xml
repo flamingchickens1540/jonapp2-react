@@ -2,14 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70c83eb3-6f67-4edb-9715-fd56584b8157" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/knightss.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/knightss.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Appbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Appbar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entrance.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entrance.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LogForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ProjectGrid.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProjectGrid.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ProjectPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProjectPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskGrid.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskGrid.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +30,9 @@
     <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="ProjectId" id="1eX23xzhblwob7lIy3CMnRvJ1da" />
+  <component name="ProjectLevelVcsManager">
+    <OptionsSetting value="false" id="Update" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -43,6 +48,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RunManager" selected="npm.npm start">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
@@ -74,7 +80,10 @@
       <workItem from="1594592159398" duration="29110000" />
       <workItem from="1594671972898" duration="13525000" />
       <workItem from="1594710087318" duration="140000" />
-      <workItem from="1594761232303" duration="19651000" />
+      <workItem from="1594761232303" duration="20793000" />
+      <workItem from="1594847512626" duration="18012000" />
+      <workItem from="1594934129592" duration="10425000" />
+      <workItem from="1595022833792" duration="1805000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <created>1594527599133</created>
@@ -104,7 +113,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594710187326</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Starting implementations of backend api.">
+      <created>1594803248050</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1594803248050</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -115,7 +131,8 @@
     <MESSAGE value="Project Page!" />
     <MESSAGE value="Tasks, subtasks, and some task editing implemented." />
     <MESSAGE value="Added more editing for projects, can now add new tasks and projects." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added more editing for projects, can now add new tasks and projects." />
+    <MESSAGE value="Starting implementations of backend api." />
+    <option name="LAST_COMMIT_MESSAGE" value="Starting implementations of backend api." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -124,18 +141,22 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1623" y="450" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400/313.-1080.1920.1040@0.0.2560.1400" timestamp="1594526181540" />
-    <state x="1516" y="211" key="CommitChangelistDialog2" timestamp="1594710185846">
+    <state x="1584" y="535" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1594864858919">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1516" y="211" key="CommitChangelistDialog2/0.0.2560.1400/313.-1080.1920.1040@0.0.2560.1400" timestamp="1594710185846" />
-    <state x="1485" y="432" key="Vcs.Push.Dialog.v2" timestamp="1594710206072">
+    <state x="1584" y="535" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.2560.1400/313.-1080.1920.1040@0.0.2560.1400" timestamp="1594864858919" />
+    <state x="1450" y="127" key="CommitChangelistDialog2" timestamp="1594803247057">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1485" y="432" key="Vcs.Push.Dialog.v2/0.0.2560.1400/313.-1080.1920.1040@0.0.2560.1400" timestamp="1594710206072" />
-    <state x="1407" y="563" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1594783086961">
+    <state x="1450" y="127" key="CommitChangelistDialog2/0.0.2560.1400/313.-1080.1920.1040@0.0.2560.1400" timestamp="1594803247057" />
+    <state x="1485" y="432" key="Vcs.Push.Dialog.v2" timestamp="1594803254555">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1407" y="563" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400/313.-1080.1920.1040@0.0.2560.1400" timestamp="1594783086961" />
+    <state x="1485" y="432" key="Vcs.Push.Dialog.v2/0.0.2560.1400/313.-1080.1920.1040@0.0.2560.1400" timestamp="1594803254555" />
+    <state x="1407" y="563" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1594934232147">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1407" y="563" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400/313.-1080.1920.1040@0.0.2560.1400" timestamp="1594934232147" />
     <state width="600" height="440" key="javadoc.popup" timestamp="1594462421182">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

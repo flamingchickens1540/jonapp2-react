@@ -8,7 +8,7 @@ import Appbar from "./Appbar";
 import Typography from "@material-ui/core/Typography";
 import Fade from "@material-ui/core/Fade";
 
-
+//Classes for below components.
 const useStyles = makeStyles((theme) => ({
    root: {
        height: '100vh',
@@ -30,13 +30,15 @@ const useStyles = makeStyles((theme) => ({
    }
 }));
 
+// Container for login/signup page visual components. Login handling done by App.
 export default function Entrance(props) {
-    const classes = useStyles();
-    const [ fadeBool, setFadeBool ] = useState(false);
+    const classes = useStyles(); //Load styles defined above
+    const [ fadeBool, setFadeBool ] = useState(false); //State deciding whether the component is faded in or not.
 
+    //Once the component is mounted, fade it in. When it is about to unmount, begin fading out.
     useEffect(() => {
-       setFadeBool(true)
-       return () => setFadeBool(false)
+       setFadeBool(true);
+       return () => setFadeBool(false);
     }, [fadeBool]);
 
     return (
@@ -46,10 +48,11 @@ export default function Entrance(props) {
                 <Grid container justify="center" alignContent="center" className={classes.offsetContainer}>
                     <Grid item xs={12} md={6} lg={3}>
                         <Container>
-                            <Paper elevation={3} className={classes.formPaper}>
+                            <Paper elevation={3} className={classes.formPaper}> {/*Contains the complete form.*/}
                                 <Typography variant="h2" className={classes.formTitle}>
-                                    {props.mainText}
+                                    {props.mainText} {/*Text for the title*/}
                                 </Typography>
+                                {/*Form component with props passed through*/}
                                 <LogForm formType={props.formType} formChoices={props.formChoices} buttonText={props.buttonText} submitHandler={props.submitHandler}/>
                             </Paper>
                         </Container>

@@ -53,15 +53,20 @@ export default function ProjectGrid(props) {
         })
     };
 
-    const projectGrid = props.projects.map(project => {
-        return (
-            <ProjectCard
-                project={project}
-                key={project.id}
-                handleChange={props.handleChange}
-            />
-        )
-    });
+    let projectGrid = '';
+    console.log(props.projects, 'PROJECTS');
+
+    if (props.projects !== []) {
+        projectGrid = props.projects.map(project => {
+            return (
+                <ProjectCard
+                    project={project}
+                    key={project.id}
+                    handleChange={props.handleChange}
+                />
+            )
+        })
+    }
 
     const addProjectForm = (
         <ProjectCard
