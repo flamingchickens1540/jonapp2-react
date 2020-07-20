@@ -5,6 +5,7 @@ import Splash from "./Splash"
 import Appbar from "./Appbar";
 import Entrance from "./Entrance";
 import ProjectPage from "./ProjectPage";
+import {setCookie} from "./utils";
 
 //Central component. Handles login/signup api requests, but hands off project and user data to the ProjectPage.
 function App() {
@@ -18,7 +19,11 @@ function App() {
                 'Content-Type': 'application/json',
             },})
             .then(response => response.json())
-            .then(data => console.log(data));
+            .then(data => {
+                console.log(data);
+                setCookie('AUTH_TOKEN', data.data)
+            })
+            .catch(error => console.log(error))
     }
 
     //Function for taking signup form values and sending request to receive auth token.
@@ -57,7 +62,7 @@ function App() {
                     <Route path="/signup">
                         <Entrance
                             formChoices={[
-                                {name: 'fullName', label: 'Full Name', type: 'text'},
+                                {name: 'name', label: 'Full Name', type: 'text'},
                                 {name: 'email', label: 'Email', type: 'email'},
                                 {name: 'password', label: 'Password', type: 'password'},
                                 {name: 'confirmpassword', label: 'Confirm Password', type: 'password'}

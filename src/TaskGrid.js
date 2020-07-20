@@ -36,26 +36,31 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
+//Much like the ProjectGrid, TaskGrid displays a given project's tasks and sub tasks.
 export default function TaskGrid(props) {
-    const classes = useStyles();
+    const classes = useStyles(); //Use those styles!
 
-    const [ fadeBool, setFadeBool ] = useState(false);
+    const [ fadeBool, setFadeBool ] = useState(false); //Used to fade in on mount.
     const [ isAddingTask, setIsAddingTask ] = useState(false);
 
     useEffect(() => {
         setFadeBool(true)
     }, [fadeBool]);
 
-    const taskGrid = props.project.tasks.map(task => {
-        return (
-            <TaskCard
-                task={task}
-                key={task.id}
-                handleChange={props.handleChange}
-                form={false}
-            />
-        )
-    });
+    let taskGrid;
+    if ('tasks' in props.project && props.project.tasks !== []) {
+        taskGrid = props.project.tasks.map(task => {
+            return (
+                <TaskCard
+                    task={task}
+                    key={task.id}
+                    handleChange={props.handleChange}
+                    form={false}
+                />
+            )
+        });
+    }
+
 
     const handleAddTask = () => {
         setIsAddingTask(prevState => {
@@ -71,7 +76,7 @@ export default function TaskGrid(props) {
                 form={true}
                 handleAddTask={handleAddTask}
             />
-    )
+    );
 
     return (
         <div className={classes.root}>

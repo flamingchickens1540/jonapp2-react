@@ -45,12 +45,22 @@ export default function ProjectGrid(props) {
         setFadeBool(true)
     }, [fadeBool]);
 
-    const handleAddProject = () => {
-        setIsAddingProject(prevState => {
-            return (
-                !prevState
-            )
-        })
+    const handleAddProject = (isPosted) => {
+        if (isPosted) {
+            props.handleChange('add');
+            setIsAddingProject(prevState => {
+                return (
+                    !prevState
+                )
+            })
+        } else {
+            setIsAddingProject(prevState => {
+                return (
+                    !prevState
+                )
+            })
+        }
+
     };
 
     let projectGrid = '';
@@ -61,7 +71,7 @@ export default function ProjectGrid(props) {
             return (
                 <ProjectCard
                     project={project}
-                    key={project.id}
+                    key={project['_id']}
                     handleChange={props.handleChange}
                 />
             )
@@ -72,7 +82,7 @@ export default function ProjectGrid(props) {
         <ProjectCard
             project={{id: 0, name: '', description: '', image: ''}}
             form={true}
-            handleAddTask={handleAddProject}
+            handleAddProject={handleAddProject}
         />
     );
 

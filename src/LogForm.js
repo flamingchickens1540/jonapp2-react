@@ -71,7 +71,7 @@ export default function LogForm(props) {
                                     <MenuItem value="user">User</MenuItem>
                                 </Field>
                             </Grid> : null}
-                        { formItems = props.formChoices.map(item => {
+                        { formItems = props.formChoices.map(item => { //Map form choices to a field
                             // let req;
                             // item.required ? req = 'required' : null; TODO: need to figure out how to implement required
 
@@ -87,6 +87,7 @@ export default function LogForm(props) {
                                     fullWidth
                                     error={
                                         Boolean(errors[item.name] && touched[item.name])
+                                        //Only show errors once the field has been touched for the first time.
                                     }
                                     helperText={errors[item.name] && touched[item.name] ? errors[item.name] : null}
                                 />

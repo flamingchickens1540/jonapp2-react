@@ -100,49 +100,53 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
+//Appbar for all pages of the JonApp.
 export default function Appbar(props) {
-    const classes = useStyles();
+    const classes = useStyles(); //Import styles from above.
 
+    //Manage the QR Code dialog appearance state.
     const [open, setOpen] = React.useState(false);
-    const [QRurl, setQRUrl] = React.useState(null)
-    const theme = useTheme();
-    const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
+    //Manage the data of the user QR code in state. Only has to be set once.
+    const [QRurl, setQRUrl] = React.useState(null);
 
-    const qrGen = () => {
+    const theme = useTheme(); //Use themes for dialog breakpoints.
+    const fullScreen = useMediaQuery(theme.breakpoints.down('sm')); //Uses a media query to fullscreen dialog box.
+
+    const qrGen = () => { //Function for generating the user's QR code. Needs to be implemented with actual user data.
         QRCode.toDataURL('UserIDTest')
             .then(url => {
-                setQRUrl(url);
+                setQRUrl(url); //Change the state value to the b64 QR code.
             })
             .catch(err => {
-                console.error(err)
+                console.error(err) //Needs better error handling, but should rarely throw anyways.
             })
     };
 
-    const handleClickOpen = () => {
+    const handleClickOpen = () => { //Handle opening the QR dialog.
         setOpen(true);
     };
 
-    const handleClose = () => {
+    const handleClose = () => { //Handle closing the QR dialog.
         setOpen(false);
     };
 
-    const [state, setState] = React.useState({
-        top: false,
+    const [state, setState] = React.useState({ //Terribly named, but the state for toggling profile drawer.
+        top: false, //Top anchor begins hidden. :)
     });
 
-    const toggleDrawer = (anchor, open) => (event) => {
+    const toggleDrawer = (anchor, open) => (event) => { //Toggle the drawer open or closed, given the anchor.
         if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
-            return;
+            return; //Makes sure you can't tab out, but can tab through.
         }
 
-        setState({ ...state, [anchor]: open });
+        setState({ ...state, [anchor]: open }); //Set that anchor to open baby!
     };
 
-    const list = (anchor) => (
+    const list = (anchor) => ( //This is the list displayed by the drawer. Contains user info.
         <div
             className={classes.profileCard}
             role="presentation"
-            // onClick={toggleDrawer(anchor, false)}
+            // onClick={toggleDrawer(anchor, false)} ---- Should it close when you click?
             onKeyDown={toggleDrawer(anchor, false)}
         >
             <Box className={classes.profileInfo}>
@@ -185,6 +189,7 @@ export default function Appbar(props) {
         </div>
     );
 
+    //Returns the long appbar with JonApp logo, with back button and profile drawer when indicated by props.
     return (
         <AppBar position="fixed" className={classes.appbar}>
             <Toolbar style={{alignItems: 'center', width: '100%'}}>

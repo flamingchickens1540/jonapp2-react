@@ -18,6 +18,7 @@ import SimpleMenu from "./simpleMenu";
 import {Field, Form, Formik} from "formik";
 import PhotoCameraIcon from "@material-ui/icons/PhotoCamera";
 import {Link} from "react-router-dom"
+import {getCookie} from "./utils";
 
 const useStyles = makeStyles((theme) => ({
     projectCard: {
@@ -117,12 +118,21 @@ export default function ProjectCard(props) {
                                 }}
                                 onSubmit={(values, { setSubmitting }) => {
                                     setTimeout(() => {
-                                        alert(JSON.stringify(values, null, 2));
-                                        console.log({
-                                            fileName: values.image.name,
-                                            type: values.image.type,
-                                            size: `${values.image.size} bytes`
-                                        });
+                                        const AUTH_TOKEN = getCookie('AUTH_TOKEN'); //Auth token from cookie.
+                                        const url = 'http://localhost:5001/project/create'; //Server url for api requests.
+                                        console.log(JSON.stringify(values));
+                                        fetch(url, {method: 'POST', body: JSON.stringify(values), headers: {
+                                                'Content-Type': 'application/json',
+                                                'Authorization': 'Basic ' + AUTH_TOKEN,
+                                            },}) //Fetch function for getting projects.
+                                            .then(response =>
+                                                response.json()
+                                            )
+                                            .then((data) => {
+                                                console.log(data);
+                                                props.handleAddProject(true);
+                                            })
+                                            .catch(error => console.log(error)); //Needs better error handling.
                                         setSubmitting(false);
                                     }, 400);
                                 }}
@@ -132,7 +142,7 @@ export default function ProjectCard(props) {
                                         <Form style={{width: '100%'}}>
                                             <Box className={classes.formImage}>
                                                 <input id="image" name="image" type="file" onChange={(event) => {
-                                                    setFieldValue("image", event.currentTarget.files[0], false)
+                                                    setFieldValue("image", event.currentTarget.files[0], false);
                                                     handleImageUpdate(event);
                                                 }} style={{display: 'none'}} />
                                                 <IconButton aria-label="add image" component='label' htmlFor="image" className={classes.imageInputButton}>
@@ -168,7 +178,7 @@ export default function ProjectCard(props) {
                                                     className={classes.formButtons}
                                                 >
                                                     <Button type="submit">Save</Button>
-                                                    <Button onClick={props.form ? props.handleAddTask : handleEdit}>Cancel</Button>
+                                                    <Button onClick={props.form ? props.handleAddProject : handleEdit}>Cancel</Button>
                                                 </ButtonGroup>
                                             </CardContent>
                                         </Form>
@@ -178,7 +188,7 @@ export default function ProjectCard(props) {
                     </ClickAwayListener>
                 :
                     <Box>
-                        <CardActionArea component={ Link } to={"/projects/" + props.project.id}>
+                        <CardActionArea component={ Link } to={"/projects/" + props.project['_id']}>
                             <CardMedia
                                 component="img"
                                 alt="Project Image"
@@ -191,7 +201,7 @@ export default function ProjectCard(props) {
                                 <Typography variant="h5" component="h2">
                                     {props.project.name}
                                 </Typography>
-                                <SimpleMenu handleEdit={handleEdit} handleDelete={props.handleChange} id={props.project.id} type="project" />
+                                <SimpleMenu handleEdit={handleEdit} handleDelete={props.handleChange('delete')} id={props.project['_id']} type="project" />
                             </Box>
                             <Typography variant="body2" color="textSecondary" component="p">
                                 {props.project.description}

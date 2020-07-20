@@ -2,16 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70c83eb3-6f67-4edb-9715-fd56584b8157" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/utils.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dictionaries/knightss.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/knightss.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Appbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Appbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entrance.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entrance.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LogForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ProjectCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProjectCard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ProjectGrid.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProjectGrid.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ProjectPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProjectPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TaskGrid.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskGrid.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +83,11 @@
       <workItem from="1594761232303" duration="20793000" />
       <workItem from="1594847512626" duration="18012000" />
       <workItem from="1594934129592" duration="10425000" />
-      <workItem from="1595022833792" duration="1805000" />
+      <workItem from="1595022833792" duration="3765000" />
+      <workItem from="1595122305554" duration="602000" />
+      <workItem from="1595144149023" duration="4060000" />
+      <workItem from="1595200038987" duration="6743000" />
+      <workItem from="1595225814213" duration="8076000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <created>1594527599133</created>
@@ -120,7 +124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594803248050</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Profile card and basic QR code implementation.">
+      <created>1595035455580</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1595035455580</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -132,7 +143,8 @@
     <MESSAGE value="Tasks, subtasks, and some task editing implemented." />
     <MESSAGE value="Added more editing for projects, can now add new tasks and projects." />
     <MESSAGE value="Starting implementations of backend api." />
-    <option name="LAST_COMMIT_MESSAGE" value="Starting implementations of backend api." />
+    <MESSAGE value="Profile card and basic QR code implementation." />
+    <option name="LAST_COMMIT_MESSAGE" value="Profile card and basic QR code implementation." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -145,14 +157,14 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1584" y="535" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.2560.1400/313.-1080.1920.1040@0.0.2560.1400" timestamp="1594864858919" />
-    <state x="1450" y="127" key="CommitChangelistDialog2" timestamp="1594803247057">
+    <state x="1450" y="127" key="CommitChangelistDialog2" timestamp="1595035454157">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1450" y="127" key="CommitChangelistDialog2/0.0.2560.1400/313.-1080.1920.1040@0.0.2560.1400" timestamp="1594803247057" />
-    <state x="1485" y="432" key="Vcs.Push.Dialog.v2" timestamp="1594803254555">
+    <state x="1450" y="127" key="CommitChangelistDialog2/0.0.2560.1400/313.-1080.1920.1040@0.0.2560.1400" timestamp="1595035454157" />
+    <state x="1485" y="432" key="Vcs.Push.Dialog.v2" timestamp="1595035460706">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1485" y="432" key="Vcs.Push.Dialog.v2/0.0.2560.1400/313.-1080.1920.1040@0.0.2560.1400" timestamp="1594803254555" />
+    <state x="1485" y="432" key="Vcs.Push.Dialog.v2/0.0.2560.1400/313.-1080.1920.1040@0.0.2560.1400" timestamp="1595035460706" />
     <state x="1407" y="563" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1594934232147">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
