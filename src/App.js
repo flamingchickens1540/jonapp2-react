@@ -7,6 +7,8 @@ import Entrance from "./Entrance";
 import ProjectPage from "./ProjectPage";
 import {setCookie} from "./utils";
 
+//Julia is so cool, like amazing!!
+
 //Central component. Handles login/signup api requests, but hands off project and user data to the ProjectPage.
 function App() {
 
